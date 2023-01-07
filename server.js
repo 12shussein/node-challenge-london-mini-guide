@@ -29,6 +29,34 @@ app.get('/colleges', (req, res) => {
     res.json(stratford.colleges);
 });
 
+app.get('/:city/pharmacies', (req, res) => {
+    const city = req.params.city;
+    if (combinedData[city]) {
+      res.json(combinedData[city].pharmacies);
+    }
+  });
+  
+  app.get('/:city/colleges', (req, res) => {
+    const city = req.params.city;
+    if (combinedData[city]) {
+    res.json(combinedData[city].colleges);
+    }
+  });
+  
+  app.get('/:city/doctors', (req, res) => {
+    const city = req.params.city;
+    if (combinedData[city]) {
+      res.json(combinedData[city].doctors);
+    } 
+  });
+  
+  app.get('/:city/hospitals', (req, res) => {
+    const city = req.params.city;
+    if (combinedData[city]) {
+    res.json(combinedData[city].hospitals);
+    }
+  });
+  
 
 
 const port = process.env.PORT || 3000;
